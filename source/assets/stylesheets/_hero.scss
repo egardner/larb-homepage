@@ -1,59 +1,81 @@
+$gr-start: hsla(0, 0%, 0%, 0);
+$gr-stop1: hsla(0, 0%, 0%, 0.5);
+$gr-stop2: hsla(0, 0%, 0%, 0.7);
+
+$rgb-gr-stop1: rgba(0, 0, 0, 0.5);
+$rgb-gr-stop2: rgba(0, 0, 0, 0.7);
+
+$hero-height-large: 600px;
+$hero-height-small: 400px;
+
+// For some reason Bourbon's background-image mixin does not seem to output a
+// linear gradient compatible with Firefox, so this has to be done manually.
+// In addition, the image_path function follows a ruby naming convention since
+// it comes from Sprockets; ignore the name rule for this case.
+// scss-lint:disable VendorPrefix
+// scss-lint:disable NameFormat
 .hero {
-  background-color: $light-gray;
-  background-image: url(image_path("cover_dark.jpg"));
+  background-color: $dark-gray;
+  background-image: url(image_path("Taos_Tegeder_6.jpg"));
   background-position: center 40%;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
+  height: $hero-height-small;
+  position: absolute;
+  width: 100%;
+  z-index: $base-z-index;
 
   @include media($medium-screen-up) {
-    height: 250px;
+    height: $hero-height-large;
   }
-
-  @include media($large-screen-up) {
-    height: 450px;
-  }
-
-  @include display(flex);
-  @include flex-direction(row);
-  @include justify-content(flex-start);
 }
+
+.hero-inner {
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(flex-end);
+  @include align-items(flex-start);
+
+  height: $hero-height-small;
+  position: relative;
+  top: 0;
+
+  // Gradient layer
+  @include background-image(linear-gradient($gr-start 0%, $gr-stop2 100%));
+  background-image: -moz-linear-gradient(transparent 0%, $rgb-gr-stop2 100%);
+
+  @include media($medium-screen-up) {
+    height: $hero-height-large;
+  }
+}
+// scss-lint:enable VendorPrefix
+// scss-lint:enable NameFormat
 
 .hero-content {
   @extend .container;
-  align-self: center;
-  color: white;
-  text-align: left;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: ($small-spacing / 2);
   width: 100%;
-}
 
-.hero-content h1 {
-  font-family: $serif;
-  font-size: 2.125em;
-  font-weight: 400;
-  margin-bottom: 0.25em;
+  .hero-title {
+    font-family: $serif;
+    font-size: 2em;
+    font-weight: 400;
+  }
+
+  .hero-category {
+    font-size: 1.25em;
+    font-weight: 400;
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+  }
 
   @include media($medium-screen-up) {
-    font-size: 2.75em;
-  }
-
-  @include media($large-screen-up) {
-    font-size: 3em;
-    margin-top: 1rem;
+    .hero-title {
+      font-size: 2.5em;
+    }
   }
 }
 
-.hero-content h2 {
-  font-weight: 400;
-  font-size: 1.45em;
-  line-height: 1.6;
-  max-width: 400px;
-
-  @include media($medium-screen-up) {
-    max-width: 100%;
-  }
-
-  @include media($large-screen-up) {
-    font-size: 1.75em;
-  }
-}
 
