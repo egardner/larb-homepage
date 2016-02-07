@@ -3,5 +3,7 @@ title: The Los Angeles Review of Books
 ---
 = partial "partials/hero", :locals => { :title => "Danielle Tegeder", :category => "Featured Artist" }
 = partial "partials/featured_stories"
-.container.featured-story-row
-  %img{:src => lorem.image("960x125") }
+.container
+  .grid-row
+    %img{:src => lorem.image("960x125") }
+= partial "partials/short_takes_most_viewed"

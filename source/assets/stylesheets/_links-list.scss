@@ -1,0 +1,24 @@
+.links-list {
+  border-bottom: $grid-border;
+  margin-bottom: $base-spacing;
+  margin-top: $base-spacing;
+  padding-bottom: $small-spacing;
+
+  @include media($medium-screen-up) {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.links-item-title {
+  font-family: $serif;
+  margin-bottom: ($small-spacing / 3);
+  text-transform: capitalize;
+}
+
+.links-item-author {
+  color: $medium-gray;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
