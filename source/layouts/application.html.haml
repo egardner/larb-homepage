@@ -9,8 +9,8 @@
     %script{:src => "https://use.typekit.net/tug4ddf.js"}
     :javascript
       try{Typekit.load({ async: true });}catch(e){}
+    = stylesheet_link_tag "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
     = stylesheet_link_tag "application"
-
   %body.site{class: page_classes}
     = partial "partials/nav"
     %main.site-content

@@ -1,12 +1,10 @@
 $gr-start: hsla(0, 0%, 0%, 0);
 $gr-stop1: hsla(0, 0%, 0%, 0.5);
 $gr-stop2: hsla(0, 0%, 0%, 0.7);
-
 $rgb-gr-stop1: rgba(0, 0, 0, 0.5);
 $rgb-gr-stop2: rgba(0, 0, 0, 0.7);
-
-$hero-height-large: 600px;
-$hero-height-small: 400px;
+$hero-height-large: 500px;
+$hero-height-small: 350px;
 
 // For some reason Bourbon's background-image mixin does not seem to output a
 // linear gradient compatible with Firefox, so this has to be done manually.
@@ -25,7 +23,7 @@ $hero-height-small: 400px;
   width: 100%;
   z-index: $base-z-index;
 
-  @include media($medium-screen-up) {
+  @include media($large-screen-up) {
     height: $hero-height-large;
   }
 }
@@ -36,15 +34,15 @@ $hero-height-small: 400px;
   @include justify-content(flex-end);
   @include align-items(flex-start);
 
-  height: $hero-height-small;
-  position: relative;
-  top: 0;
-
   // Gradient layer
   @include background-image(linear-gradient($gr-start 0%, $gr-stop2 100%));
   background-image: -moz-linear-gradient(transparent 0%, $rgb-gr-stop2 100%);
 
-  @include media($medium-screen-up) {
+  height: $hero-height-small;
+  position: relative;
+  top: 0;
+
+  @include media($large-screen-up) {
     height: $hero-height-large;
   }
 }
@@ -55,17 +53,16 @@ $hero-height-small: 400px;
   @extend .container;
   color: #fff;
   letter-spacing: 1px;
-  margin-bottom: ($small-spacing / 2);
   width: 100%;
 
   .hero-title {
     font-family: $serif;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 400;
+    margin-bottom: ($small-spacing / 2);
   }
 
   .hero-category {
-    font-size: 1.25em;
     font-weight: 400;
     margin-bottom: 0.25em;
     text-transform: uppercase;
@@ -73,7 +70,11 @@ $hero-height-small: 400px;
 
   @include media($medium-screen-up) {
     .hero-title {
-      font-size: 2.5em;
+      font-size: 2.125em;
+    }
+
+    .hero-category {
+      font-size: 1.125em;
     }
   }
 }

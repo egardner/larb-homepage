@@ -1,4 +1,4 @@
-$navigation-height: 50px;
+$navigation-height: 40px;
 $navigation-background: $light-gray;
 $navigation-color: rgb(74, 74, 74);
 $navigation-color-hover: $larb-red;
@@ -8,7 +8,6 @@ $navigation-button-background: $larb-red;
   background-color: $navigation-background;
   border-bottom: 1px solid darken($navigation-background, 10);
   font-family: $sans-serif;
-  font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.75px;
   line-height: $navigation-height;
@@ -22,55 +21,51 @@ $navigation-button-background: $larb-red;
   }
 }
 
-.navigation-logo {
-  background-image: url(image_path("larb_logo_small.svg"));
-  height: 73px;
-  position: absolute;
-  width: 90px;
+.navigation-menu {
+  @include display(flex);
+  @include flex-direction(row);
+  @include flex-wrap(no-wrap);
+  @include justify-content(space-between);
+}
+
+.navigation-menu-left {
+  margin-left: 90px;
 
   @include media($medium-screen-up) {
-    float: left;
-  }
-
-  @include media($large-screen-up) {
-    background-color: transparent;
-    background-image: url(image_path("larb_logo.svg"));
-    background-position: center bottom;
-    height: 170px;
-    position: absolute;
-    width: 90px;
+    margin-left: 100px;
   }
 }
 
-.navigation-menu {
-  @include transition(all 0.3s ease-in-out);
-  letter-spacing: 1px;
-  max-height: 0;
-  margin-left: 120px;
-  overflow: hidden;
-  text-transform: uppercase;
+.navigation-menu-right {
+  .nav-link {
+    margin-right: 0;
 
-  // css won't animate height, only max-height
-  &.active {
-    max-height: 1000px;
-  }
-
-  @include media($large-screen-up) {
-    float: left;
-    max-height: inherit;
+    a {
+      color: $larb-red;
+    }
   }
 }
 
-.nav-menu-icon {
-  font-weight: 400;
-  font-size: 1.75em;
+// scss-lint:disable NameFormat
+.navigation-logo {
+  background-image: url(image_path("larb_logo_small.svg"));
+  background-position: center bottom;
+  height: 65px;
   position: absolute;
-  right: 1.5rem;
-  top: 0;
+  width: 70px;
 
-  @include media($large-screen-up) {
-    // display: none;
+  @include media($medium-screen-up) {
+    background-color: transparent;
+    background-image: url(image_path("larb_logo_medium.svg"));
+    height: 140px;
+    width: 74px;
   }
+}
+// scss-lint:enable NameFormat
+
+.nav-search-icon,
+.nav-menu-icon {
+  margin-left: 1.5rem;
 
   a {
     color: $navigation-color;
@@ -82,11 +77,24 @@ $navigation-button-background: $larb-red;
   }
 }
 
+.nav-search-icon {
+  float: left;
+  font-size: 1.25em;
+}
+
+
+.nav-menu-icon {
+  float: right;
+  font-size: 1.5em;
+}
+
 .nav-link {
-  @include media($medium-screen-up) {
-    float: left;
-    margin-right: 1.5rem;
-  }
+  display: none;
+  float: left;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  margin-right: 1.5em;
+  text-transform: uppercase;
 
   a {
     color: $navigation-color;
@@ -99,8 +107,12 @@ $navigation-button-background: $larb-red;
     }
   }
 
-  .button {
-    @extend button;
-    font-family: $sans-serif;
+  @include media($medium-screen-up) {
+    display: block;
+    font-size: 0.75rem;
+  }
+
+  @include media($large-screen-up) {
+    font-size: 0.85rem;
   }
 }

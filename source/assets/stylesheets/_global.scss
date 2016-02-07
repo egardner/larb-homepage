@@ -71,3 +71,28 @@ body {
   margin-bottom: $small-spacing;
   padding-left: $base-spacing;
 }
+
+.button-wrapper {
+  @include span-columns(12);
+  margin-bottom: $small-spacing;
+  text-align: center;
+}
+
+.load-more {
+  background-color: $base-background-color;
+  border: solid 1px tint($base-font-color, 80%);
+  border-radius: 0;
+  color: tint($base-font-color, 80%);
+  font-family: $sans-serif;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+

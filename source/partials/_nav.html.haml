@@ -2,18 +2,26 @@
   %nav{:role => "navigation"}
     = link_to "/index.html" do
       .navigation-logo
-    %ul.navigation-menu
-      %li.nav-link
-        = link_to "New to LARB?", "/index.html"
-      %li.nav-link
-        = link_to "This Week", "/index.html"
-      %li.nav-link
-        = link_to "Sections", "/about.html"
-      %li.nav-link
-        = link_to "Channels", "/index.html"
-      %li.nav-link
-        = link_to "About", "/index.html"
-      %li.nav-link
-        = link_to "Sign In", "/index.html"
-    .nav-menu-icon
-      %a{:href => "javascript:void(0);"} ☰
+    .navigation-menu
+      %ul.navigation-menu-left
+        %li.nav-link
+          = link_to "New to LARB?", "/index.html"
+        %li.nav-link
+          = link_to "This Week", "/index.html"
+        %li.nav-link
+          = link_to "Sections", "/about.html"
+        %li.nav-link
+          = link_to "Channels", "/index.html"
+        %li.nav-link
+          = link_to "About", "/index.html"
+        %li.nav-link
+          = link_to "Sign In", "/index.html"
+      %ul.navigation-menu-right
+        %li.nav-link
+          = link_to "Donate", "/index.html"
+        .nav-search-icon
+          %a{:href => "javascript:void(0);"}
+            %i.ion-search
+        .nav-menu-icon
+          %a{:href => "javascript:void(0);"}
+            %i.ion-navicon
