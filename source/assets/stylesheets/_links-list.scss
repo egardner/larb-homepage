@@ -1,8 +1,8 @@
 .links-list {
+  @include padding(0 $small-spacing $small-spacing);
   border-bottom: $grid-border;
   margin-bottom: $base-spacing;
   margin-top: $base-spacing;
-  padding-bottom: $small-spacing;
 
   @include media($medium-screen-up) {
     border-bottom: 0;

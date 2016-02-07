@@ -8,7 +8,6 @@ $grid-border: 1px solid tint($base-font-color, 90%);
 }
 
 .grid-item-image {
-  // margin-bottom: $small-spacing;
   width: 100%;
 }
 
@@ -42,9 +41,13 @@ $grid-border: 1px solid tint($base-font-color, 90%);
       font-size: 1.35em;
     }
 
+    &:first-of-type {
+      @include padding(null $small-spacing null null);
+    }
+
     &:last-of-type {
+      @include padding(null null null $base-spacing);
       border-left: $grid-border;
-      padding-left: $base-spacing;
     }
   }
 }
@@ -53,5 +56,13 @@ $grid-border: 1px solid tint($base-font-color, 90%);
   @include media($medium-screen-up) {
     @include span-columns(4);
     @include omega(3n);
+    @include padding(null $small-spacing null null);
+
+    &:first-of-type {
+    }
+
+    &:last-of-type {
+      @include padding(null 0 null $small-spacing);
+    }
   }
 }
