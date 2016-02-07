@@ -1,15 +1,6 @@
-$featured-story-border: 1px solid tint($base-font-color, 90%);
-
 .featured-stories {
   @extend .container;
   font-family: $serif;
-}
-
-
-.featured-story-image {
-  width: 100%;
-  margin-bottom: $small-spacing;
-
 }
 
 .section-heading {
@@ -29,7 +20,6 @@ $featured-story-border: 1px solid tint($base-font-color, 90%);
     font-size: 1.45em;
   }
 }
-
 
 .featured-story-title {
   font-family: $serif;
@@ -83,56 +73,3 @@ $featured-story-border: 1px solid tint($base-font-color, 90%);
   }
 }
 
-// Featured Story Grid
-// ----------------------------------------------------------------------------
-
-.featured-story-row {
-  @include row;
-  border-bottom: $featured-story-border;
-  padding-bottom: $small-spacing;
-  padding-top: $base-spacing;
-}
-
-.featured-story-full-width {
-  @include span-columns(12);
-
-  @include media($medium-screen-up) {
-    @include span-columns(12);
-
-    .featured-story-title {
-      font-size: 1.45em;
-    }
-
-    .featured-story-image {
-      @include span-columns(6 of 12);
-    }
-
-    .featured-story-text {
-      @include span-columns(6 of 12);
-      @include omega;
-    }
-  }
-}
-
-.featured-story-half-width {
-  @include media($medium-screen-up) {
-    @include span-columns(6);
-    @include omega(2n);
-
-    .featured-story-title {
-      font-size: 1.35em;
-    }
-
-    &:last-of-type {
-      border-left: $featured-story-border;
-      padding-left: $base-spacing;
-    }
-  }
-}
-
-.featured-story-third-width {
-  @include media($medium-screen-up) {
-    @include span-columns(4);
-    @include omega(3n);
-  }
-}
