@@ -1,4 +1,4 @@
-$navigation-height: 40px;
+$navigation-height: 50px;
 $navigation-background: $light-gray;
 $navigation-color: rgb(74, 74, 74);
 $navigation-color-hover: $larb-red;
@@ -50,7 +50,7 @@ $navigation-button-background: $larb-red;
 .navigation-logo {
   background-image: url(image_path("larb_logo_small.svg"));
   background-position: center bottom;
-  height: 65px;
+  height: 74px;
   position: absolute;
   width: 70px;
 
@@ -79,13 +79,13 @@ $navigation-button-background: $larb-red;
 
 .nav-search-icon {
   float: left;
-  font-size: 1.25em;
+  font-size: 1.35em;
 }
 
 
 .nav-menu-icon {
   float: right;
-  font-size: 1.5em;
+  font-size: 1.65em;
 }
 
 .nav-link {
@@ -114,5 +114,33 @@ $navigation-button-background: $larb-red;
 
   @include media($large-screen-up) {
     font-size: 0.85rem;
+  }
+}
+
+.site-header {
+  margin-top: $navigation-height;
+}
+
+.site-header-inner {
+  @extend .container;
+  overflow: hidden;
+}
+
+.site-title {
+  color: darken($navigation-background, 45%);
+  font-size: 2.25rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-top: $small-spacing;
+  text-transform: uppercase;
+
+  @include media($medium-screen-up) {
+    font-size: 2.5rem;
+    margin-left: 100px;
+    margin-top: ($small-spacing / 2);
+  }
+
+  @include media($large-screen-up) {
+    font-size: 2.75rem;
   }
 }
