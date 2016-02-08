@@ -8,7 +8,7 @@
 // scss-lint:disable NameFormat
 .larb-av-background {
   background-color: $dark-gray;
-  background-image: url(image_path("larb_av_bg.jpg"));
+  background-image: url(image_path('larb_av_bg.jpg'));
   background-position: center center;
   height: 300px;
   position: absolute;
@@ -45,6 +45,10 @@
   top: 200px;
 
   @include media($medium-screen-up) {
+    .grid-row {
+      border-bottom: none;
+    }
+
     .grid-item-full-width {
       .grid-item-image {
         @include span-columns(6 of 12);
