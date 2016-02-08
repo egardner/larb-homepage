@@ -32,8 +32,8 @@ $grid-border: 1px solid tint($base-font-color, 90%);
 }
 
 .grid-item-image {
-  width: 100%;
   margin-bottom: $base-spacing;
+  width: 100%;
 }
 
 .grid-item-full-width {
@@ -48,13 +48,11 @@ $grid-border: 1px solid tint($base-font-color, 90%);
 
     .grid-item-image {
       @include span-columns(6 of 12);
-      @include padding(null $small-spacing null null);
     }
 
     .grid-item-text {
       @include span-columns(6 of 12);
       @include omega;
-      @include padding(null null null $base-spacing);
     }
   }
 }
@@ -67,15 +65,6 @@ $grid-border: 1px solid tint($base-font-color, 90%);
     .grid-item-title {
       font-size: 1.35em;
     }
-
-    &:first-of-type {
-      @include padding(null $small-spacing null null);
-    }
-
-    &:last-of-type {
-      @include padding(null null null $base-spacing);
-      // border-left: $grid-border;
-    }
   }
 }
 
@@ -83,13 +72,5 @@ $grid-border: 1px solid tint($base-font-color, 90%);
   @include media($medium-screen-up) {
     @include span-columns(4);
     @include omega(3n);
-    @include padding(null $small-spacing null null);
-
-    &:first-of-type {
-    }
-
-    &:last-of-type {
-      @include padding(null 0 null $small-spacing);
-    }
   }
 }
