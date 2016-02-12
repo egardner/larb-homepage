@@ -10,12 +10,12 @@ $grid-border: 1px solid tint($base-font-color, 90%);
   text-transform: uppercase;
 
   @include media($medium-screen-up) {
-    font-size: 1.25em;
+    font-size: 1.125em;
   }
 
   @include media($large-screen-up) {
     @include margin($small-spacing null);
-    font-size: 1.45em;
+    font-size: 1.25em;
     padding-top: $small-spacing;
   }
 }
@@ -32,7 +32,7 @@ $grid-border: 1px solid tint($base-font-color, 90%);
 }
 
 .grid-item-image {
-  margin-bottom: $base-spacing;
+  margin-bottom: $small-spacing;
   width: 100%;
 }
 
@@ -58,6 +58,17 @@ $grid-border: 1px solid tint($base-font-color, 90%);
 }
 
 .grid-item-half-width {
+  @include span-columns(12);
+
+  .grid-item-image {
+    @include span-columns(4 of 12);
+  }
+
+  .grid-item-text {
+    @include span-columns(8 of 12);
+    @include omega;
+  }
+
   @include media($medium-screen-up) {
     @include span-columns(6);
     @include omega(2n);
@@ -69,6 +80,8 @@ $grid-border: 1px solid tint($base-font-color, 90%);
 }
 
 .grid-item-third-width {
+  @include span-columns(12);
+
   @include media($medium-screen-up) {
     @include span-columns(4);
     @include omega(3n);

@@ -1,48 +1,63 @@
 .featured-stories
-  %h2.section-heading Featured Stories
   .grid-row
     .featured-story.grid-item-full-width
-      %img.grid-item-image{:src => lorem.image("480x270") }
+      %img.grid-item-image{:src => image_path("paolo_woods.jpg") }
       .grid-item-text
-        %h4.featured-story-category= lorem.words 2
-        %h2.featured-story-title= lorem.words 5
+        %h4.featured-story-category Photography
+        %h2.featured-story-title Life-styles of the Obscure and Tax-averse
         %h3.featured-story-author= "By #{lorem.words 2}"
         %p.featured-story-blurb= lorem.sentences 3
   .grid-row
     .featured-story.grid-item-half-width
+      %img.grid-item-image{:src => image_path("ed_park.jpg") }
       .grid-item-text
-        %h4.featured-story-category= lorem.words 2
-        %h2.featured-story-title= lorem.words 5
-        %h3.featured-story-author= "By #{lorem.words 2}"
-        %p.featured-story-blurb= lorem.sentences 4
+        %h4.featured-story-category Interview
+        %h2.featured-story-title 
+          Ed Park's
+          %em City of No Illusions
+        %h3.featured-story-author Steph Cha &mdash; Feb 11
+        %p.featured-story-blurb= lorem.sentences 2
     .featured-story.grid-item-half-width
+      %img.grid-item-image{:src => image_path("ron_finley.jpg") }
       .grid-item-text
-        %h4.featured-story-category= lorem.words 2
-        %h2.featured-story-title= lorem.words 5
-        %h3.featured-story-author= "By #{lorem.words 2}"
-        %p.featured-story-blurb= lorem.sentences 4
+        %h4.featured-story-category Interview
+        %h2.featured-story-title Ron Finley: Time to #plantsomeshit
+        %h3.featured-story-author Janice Rhoshalle Littlejohn &mdash; Feb 8
+        %p.featured-story-blurb= lorem.sentences 2
   .grid-row
-    .featured-story.grid-item-third-width
-      %img.grid-item-image{:src => lorem.image("480x270") }
+    .featured-story.grid-item-half-width
+      %img.grid-item-image{:src => image_path("longest_night.png") }
       .grid-item-text
-        %h4.featured-story-category= lorem.words 2
-        %h2.featured-story-title= lorem.words 5
-        %h3.featured-story-author= "By #{lorem.words 2}"
-        %p.featured-story-blurb= lorem.sentences 4
-    .featured-story.grid-item-third-width
-      %img.grid-item-image{:src => lorem.image("480x270") }
+        %h4.featured-story-category Books
+        %h2.featured-story-title Marriage in Nuclear Meltdown
+        %h3.featured-story-author Catherine Steindler &mdash; Feb 6
+        %p.featured-story-blurb= lorem.sentences 2
+    .featured-story.grid-item-half-width
+      %img.grid-item-image{:src => image_path("lazarus.png") }
       .grid-item-text
-        %h4.featured-story-category= lorem.words 2
-        %h2.featured-story-title= lorem.words 5
-        %h3.featured-story-author= "By #{lorem.words 2}"
-        %p.featured-story-blurb= lorem.sentences 4
-    .featured-story.grid-item-third-width
-      %img.grid-item-image{:src => lorem.image("480x270") }
-      .grid-item-text
-        %h4.featured-story-category= lorem.words 2
-        %h2.featured-story-title= lorem.words 5
-        %h3.featured-story-author= "By #{lorem.words 2}"
-        %p.featured-story-blurb= lorem.sentences 4
+        %h4.featured-story-category Books
+        %h2.featured-story-title Anatomy of the Russian Soul
+        %h3.featured-story-author Janet Finch &mdash; Feb 6
+        %p.featured-story-blurb= lorem.sentences 2
   .grid-row
     .button-wrapper
-      %button.load-more More Featured Stories
+      %button.load-more More Recent Stories
+  .grid-row
+    .featured-story.grid-item-third-width
+      %img.grid-item-image{:src => lorem.image("480x270") }
+      .grid-item-text
+        %h4.featured-story-category= lorem.words 2
+        %h2.featured-story-title= lorem.words 5
+        %h3.featured-story-author= "By #{lorem.words 2}"
+    .featured-story.grid-item-third-width
+      %img.grid-item-image{:src => lorem.image("480x270") }
+      .grid-item-text
+        %h4.featured-story-category= lorem.words 2
+        %h2.featured-story-title= lorem.words 5
+        %h3.featured-story-author= "By #{lorem.words 2}"
+    .featured-story.grid-item-third-width
+      %img.grid-item-image{:src => lorem.image("480x270") }
+      .grid-item-text
+        %h4.featured-story-category= lorem.words 2
+        %h2.featured-story-title= lorem.words 5
+        %h3.featured-story-author= "By #{lorem.words 2}"

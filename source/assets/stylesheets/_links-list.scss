@@ -9,19 +9,20 @@
   }
 
   .grid-item-image {
-    margin-bottom: $small-spacing;
+    margin-bottom: ($small-spacing / 2);
   }
 }
 
 .links-item-title {
   font-family: $serif;
+  font-size: 0.85em;
   margin-bottom: ($small-spacing / 3);
   text-transform: capitalize;
 }
 
 .links-item-author {
   color: $medium-gray;
+  font-size: 0.85rem;
   font-weight: 400;
-  letter-spacing: 1px;
   text-transform: capitalize;
 }
